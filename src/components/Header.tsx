@@ -72,7 +72,7 @@ export default function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative w-16 h-16">
+              <div className="relative w-24 h-24">
                 <img 
                   src="/logo.PNG" 
                   alt="4Plus Technical Services" 
@@ -80,9 +80,9 @@ export default function Header() {
                 />
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-lg text-gray-900">
+                <h1 className=" text-2xl text-gray-900">
                   4PLUS TECHNICAL SERVICES
-                </span>
+                </h1>
                 <span className="block text-xs tracking-wider text-gray-600">
                   
                 </span>
