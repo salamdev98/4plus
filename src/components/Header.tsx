@@ -70,7 +70,7 @@ export default function Header() {
             >
               <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0">
                 <img 
-                  src="/logo.PNG" 
+                  src="/logo.png" 
                   alt="4Plus Technical Services" 
                   className="w-full h-full object-contain"
                 />
@@ -178,7 +178,7 @@ export default function Header() {
                 <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
                   <div className="flex items-center space-x-3">
                     <img 
-                      src="/logo.PNG" 
+                      src="/logo.png" 
                       alt="4Plus" 
                       className="w-10 h-10 object-contain"
                     />
