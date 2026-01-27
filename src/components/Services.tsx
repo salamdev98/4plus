@@ -4,22 +4,6 @@ import { FileCheck, Briefcase, Zap, Wind, Droplets, PenTool } from 'lucide-react
 
 const services = [
   {
-    icon: FileCheck,
-    title: "Design & Approvals",
-    description: "Comprehensive MEP design services with regulatory compliance and authority approvals for seamless project execution.",
-    color: "from-blue-400 to-blue-600",
-    bgColor: "bg-blue-50",
-    iconColor: "text-blue-600"
-  },
-  {
-    icon: Briefcase,
-    title: "Project Management",
-    description: "End-to-end project management ensuring timely delivery, quality control, and efficient resource utilization.",
-    color: "from-green-400 to-green-600",
-    bgColor: "bg-green-50",
-    iconColor: "text-green-600"
-  },
-  {
     icon: Zap,
     title: "Electrical & ELV Systems",
     description: "Advanced electrical installations and extra low voltage systems including security, networking, and automation.",
@@ -44,12 +28,12 @@ const services = [
     iconColor: "text-indigo-600"
   },
   {
-    icon: PenTool,
-    title: "Design & Layout",
-    description: "Innovative spatial planning and technical layouts optimized for functionality, efficiency, and aesthetics.",
-    color: "from-pink-400 to-rose-600",
-    bgColor: "bg-rose-50",
-    iconColor: "text-rose-600"
+    icon: FileCheck,
+    title: "Design & Approvals",
+    description: "Comprehensive MEP design services with regulatory compliance and authority approvals for seamless project execution.",
+    color: "from-blue-400 to-blue-600",
+    bgColor: "bg-blue-50",
+    iconColor: "text-blue-600"
   }
 ];
 
@@ -83,7 +67,7 @@ export default function Services() {
         </motion.div>
 
         {/* Service Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {services.map((service) => (
             <motion.div
               key={service.title}
