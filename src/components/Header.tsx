@@ -80,6 +80,11 @@ export default function Header() {
                   4PLUS TECHNICAL SERVICES
                 </h1>
               </div>
+              <div className="block sm:hidden">
+                <h1 className="text-xs font-bold text-gray-900 leading-tight">
+                  4PLUS TECHNICAL SERVICES
+                </h1>
+              </div>
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -166,7 +171,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white z-50 md:hidden shadow-2xl overflow-hidden"
+              className="fixed inset-0 bg-white z-50 md:hidden overflow-hidden"
             >
               <div className="flex flex-col h-full">
                 {/* Menu Header */}
@@ -177,7 +182,7 @@ export default function Header() {
                       alt="4Plus" 
                       className="w-10 h-10 object-contain"
                     />
-                    <span className="text-gray-900 font-bold text-lg">MENU</span>
+                    <span className="text-gray-900 font-bold text-lg">4PLUS TECHNICAL SERVICES</span>
                   </div>
                   <motion.button
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -204,13 +209,13 @@ export default function Header() {
                 </div>
 
                 {/* Menu Footer */}
-                <div className="p-4 sm:p-6 border-t border-gray-200">
+                <div className="p-6 border-t border-gray-200 bg-gray-50">
                   <div className="text-center">
                     <p className="text-gray-600 text-sm font-medium">
                       Engineering Excellence
                     </p>
                     <p className="text-gray-500 text-xs mt-1">
-                      © 2025 4Plus Technical Services
+                      © 2024 4Plus Technical Services
                     </p>
                   </div>
                 </div>
