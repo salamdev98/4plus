@@ -6,20 +6,23 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import FloatingActions from './components/FloatingActions';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    document.title = "4plus Technical Services - Engineering Excellence";
+    // Updated title to match SEO-optimized version in index.html
+    document.title = "4Plus Technical Services | MEP Engineering Excellence in UAE";
   }, []);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       <Header/>
       <Hero />
       <About />
       <VisionMission />
       <Services />
       <Contact />
+      <Footer />
       <FloatingActions />
     </main>
   );
