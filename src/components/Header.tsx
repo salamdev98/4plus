@@ -57,22 +57,18 @@ export default function Header() {
         initial={{ y: 0 }}
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/95 backdrop-blur-lg shadow-lg' 
-            : 'bg-white shadow-md'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md"
       >
-        <nav className="container mx-auto px-6 py-4">
+        <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.a
               href="#"
-              className="flex items-center space-x-3 group"
+              className="flex items-center space-x-2 sm:space-x-3 group flex-shrink-0"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative w-24 h-24">
+              <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0">
                 <img 
                   src="/logo.PNG" 
                   alt="4Plus Technical Services" 
@@ -80,17 +76,14 @@ export default function Header() {
                 />
               </div>
               <div className="hidden sm:block">
-                <h1 className=" text-2xl text-gray-900">
+                <h1 className="text-sm md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight">
                   4PLUS TECHNICAL SERVICES
                 </h1>
-                <span className="block text-xs tracking-wider text-gray-600">
-                  
-                </span>
               </div>
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               {navItems.map((item, index) => (
                 <a
                   key={item.name}
@@ -101,7 +94,7 @@ export default function Header() {
                   }}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  className="relative  font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
+                  className="relative text-sm lg:text-base font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300 cursor-pointer whitespace-nowrap"
                 >
                   <span className="relative z-10">{item.name}</span>
                   
@@ -121,7 +114,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-900 hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-lg text-gray-900 hover:bg-gray-100 transition-colors flex-shrink-0"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -134,7 +127,7 @@ export default function Header() {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -144,7 +137,7 @@ export default function Header() {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu className="w-6 h-6" />
+                    <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -173,11 +166,11 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 bg-white z-50 md:hidden shadow-2xl"
+              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white z-50 md:hidden shadow-2xl overflow-hidden"
             >
               <div className="flex flex-col h-full">
                 {/* Menu Header */}
-                <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
                   <div className="flex items-center space-x-3">
                     <img 
                       src="/logo.PNG" 
@@ -197,8 +190,8 @@ export default function Header() {
                 </div>
 
                 {/* Menu Items */}
-                <div className="flex-1 overflow-y-auto py-8 px-6">
-                  <div className="space-y-3">
+                <div className="flex-1 overflow-y-auto py-6 sm:py-8 px-4 sm:px-6">
+                  <div className="space-y-2 sm:space-y-3">
                     {navItems.map((item, index) => (
                       <MobileMenuItem
                         key={item.name}
@@ -211,7 +204,7 @@ export default function Header() {
                 </div>
 
                 {/* Menu Footer */}
-                <div className="p-6 border-t border-gray-200">
+                <div className="p-4 sm:p-6 border-t border-gray-200">
                   <div className="text-center">
                     <p className="text-gray-600 text-sm font-medium">
                       Engineering Excellence
@@ -248,9 +241,9 @@ function MobileMenuItem({ item, index, handleNavClick }) {
       onMouseLeave={() => setIsHovered(false)}
       className="block group cursor-pointer"
     >
-      <div className="relative p-4 hover:bg-gray-50 transition-all duration-300">
+      <div className="relative p-3 sm:p-4 hover:bg-gray-50 transition-all duration-300 rounded-lg">
         <div className="relative flex items-center justify-between">
-          <span className="text-gray-900 font-medium text-lg">
+          <span className="text-gray-900 font-medium text-base sm:text-lg">
             {item.name}
           </span>
           <span className={`transition-all duration-300 ${isHovered ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-0'}`}>
