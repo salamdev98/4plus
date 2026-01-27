@@ -27,13 +27,10 @@ const iconVariants = {
 
 /* ------------------ Circuit Paths ------------------ */
 const circuitPaths = [
-  // Main horizontal circuits
   "M0,20 Q30,10 60,20 T120,20",
   "M0,80 Q40,90 80,80 T160,80",
-  // Vertical connecting circuits
   "M30,0 Q20,30 30,60",
   "M90,40 Q100,60 90,80",
-  // Diagonal circuits
   "M10,10 L40,40",
   "M130,60 L160,30",
 ];
@@ -41,10 +38,10 @@ const circuitPaths = [
 /* ------------------ Circuit Line Component ------------------ */
 const CircuitLine = ({ path, index }) => {
   const strokeColors = [
-    "rgba(59, 130, 246, 0.15)",  // blue-500
-    "rgba(34, 197, 94, 0.15)",   // green-500
-    "rgba(168, 85, 247, 0.15)",  // purple-500
-    "rgba(6, 182, 212, 0.15)",   // cyan-500
+    "rgba(59, 130, 246, 0.15)",
+    "rgba(34, 197, 94, 0.15)",
+    "rgba(168, 85, 247, 0.15)",
+    "rgba(6, 182, 212, 0.15)",
   ];
 
   return (
@@ -122,7 +119,6 @@ const DataFlowLine = ({ fromX, fromY, toX, toY, delay = 0 }) => {
         }}
       />
       
-      {/* Moving dot along the path */}
       <motion.circle
         r="3"
         fill="rgba(59, 130, 246, 0.6)"
@@ -151,7 +147,7 @@ const DataFlowLine = ({ fromX, fromY, toX, toY, delay = 0 }) => {
 /* ------------------ MEP Icon Component ------------------ */
 const MEPIcon = ({ Icon, x, y, color, size = 32, delay = 0 }) => (
   <motion.div
-    className="absolute"
+    className="absolute hidden sm:block"
     style={{
       left: `${x}%`,
       top: `${y}%`,
@@ -230,7 +226,7 @@ export default function VisionMission() {
   return (
     <section
       ref={ref}
-      className="relative py-32 overflow-hidden bg-gray-900"
+      className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gray-900"
     >
       {/* SVG Gradients Definition */}
       <svg className="absolute w-0 h-0">
@@ -258,15 +254,15 @@ export default function VisionMission() {
       {/* Animated grid */}
       <PulseGrid />
 
-      {/* Circuit Lines */}
-      <div className="absolute inset-0">
+      {/* Circuit Lines - hidden on mobile */}
+      <div className="absolute inset-0 hidden md:block">
         {circuitPaths.map((path, index) => (
           <CircuitLine key={index} path={path} index={index} />
         ))}
       </div>
 
-      {/* Data Flow Lines */}
-      <div className="absolute inset-0">
+      {/* Data Flow Lines - hidden on mobile */}
+      <div className="absolute inset-0 hidden md:block">
         <DataFlowLine fromX="10" fromY="30" toX="90" toY="70" delay={0} />
         <DataFlowLine fromX="20" fromY="70" toX="80" toY="30" delay={0.5} />
         <DataFlowLine fromX="5" fromY="50" toX="95" toY="50" delay={1} />
@@ -288,11 +284,11 @@ export default function VisionMission() {
         className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"
       />
 
-      {/* Floating Energy Dots */}
+      {/* Floating Energy Dots - reduced on mobile */}
       {Array.from({ length: 6 }).map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 bg-blue-400/30 rounded-full blur-sm"
+          className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400/30 rounded-full blur-sm"
           style={{
             left: `${(i * 20) % 100}%`,
             top: `${20 + (i * 15) % 60}%`,
@@ -311,24 +307,24 @@ export default function VisionMission() {
         />
       ))}
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block mb-4 px-6 py-2 bg-white/10 backdrop-blur rounded-full border border-white/20 text-sm font-semibold tracking-wider text-white"
+            className="inline-block mb-3 sm:mb-4 px-4 sm:px-6 py-2 bg-white/10 backdrop-blur rounded-full border border-white/20 text-xs sm:text-sm font-semibold tracking-wider text-white"
           >
             OUR GUIDING PRINCIPLES
           </motion.span>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 px-4">
             Vision & Mission
           </h2>
 
@@ -341,7 +337,7 @@ export default function VisionMission() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Vision */}
           <motion.div
             variants={cardVariants}
@@ -353,7 +349,7 @@ export default function VisionMission() {
           >
             {/* Card glow effect */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-3xl blur-xl"
+              className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl sm:rounded-3xl blur-xl"
               animate={{
                 opacity: [0.1, 0.2, 0.1],
               }}
@@ -364,26 +360,32 @@ export default function VisionMission() {
               }}
             />
 
-            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 transition-all duration-300 group-hover:border-blue-400/50 group-hover:bg-white/10">
+            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-300 group-hover:border-blue-400/50 group-hover:bg-white/10">
               <motion.div
                 variants={iconVariants}
-                className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl mb-6 shadow-lg shadow-blue-500/20"
+                className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 shadow-lg shadow-blue-500/20"
               >
-                <Eye className="w-8 h-8 text-white" />
+                <Eye className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
               </motion.div>
 
-              <h3 className="text-3xl font-bold text-white mb-6">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                 Our Vision
               </h3>
 
-              <p className="text-gray-300 text-lg leading-relaxed">
-                To be a leading technical services provider delivering
-                innovative, sustainable, and future-ready MEP solutions.
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                To be a trusted partner
+in the MEP industry by
+consistently delivering
+cutting-edge solutions,
+upholding the highest
+standards of quality, and
+ensuring long-term client
+satisfaction, with a commitment to innovation and excellence.
               </p>
 
               {/* Animated corner glow */}
               <motion.div
-                className="absolute bottom-0 right-0 w-32 h-32 bg-blue-500/10 rounded-tl-full"
+                className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-blue-500/10 rounded-tl-full"
                 animate={{
                   opacity: [0.05, 0.1, 0.05],
                   scale: [1, 1.1, 1],
@@ -408,7 +410,7 @@ export default function VisionMission() {
           >
             {/* Card glow effect */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent rounded-3xl blur-xl"
+              className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent rounded-2xl sm:rounded-3xl blur-xl"
               animate={{
                 opacity: [0.1, 0.2, 0.1],
               }}
@@ -420,27 +422,31 @@ export default function VisionMission() {
               }}
             />
 
-            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 transition-all duration-300 group-hover:border-green-400/50 group-hover:bg-white/10">
+            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-300 group-hover:border-green-400/50 group-hover:bg-white/10">
               <motion.div
                 variants={iconVariants}
-                className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl mb-6 shadow-lg shadow-green-500/20"
+                className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 shadow-lg shadow-green-500/20"
               >
-                <Target className="w-8 h-8 text-white" />
+                <Target className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
               </motion.div>
 
-              <h3 className="text-3xl font-bold text-white mb-6">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                 Our Mission
               </h3>
 
-              <p className="text-gray-300 text-lg leading-relaxed">
-                To execute every project with precision, integrity, and
-                excellence while embracing advanced technologies and
-                sustainable practices.
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                To deliver efficient, sustainable,
+and cost-effective MEP solutions
+tailored to our clients' needs,
+enhancing their infrastructure's
+performance and safety while
+upholding our commitment to
+excellence and innovation.
               </p>
 
               {/* Animated corner glow */}
               <motion.div
-                className="absolute bottom-0 right-0 w-32 h-32 bg-green-500/10 rounded-tl-full"
+                className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-green-500/10 rounded-tl-full"
                 animate={{
                   opacity: [0.05, 0.1, 0.05],
                   scale: [1, 1.1, 1],
@@ -459,7 +465,7 @@ export default function VisionMission() {
 
       {/* Ambient glow effects */}
       <motion.div
-        className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"
+        className="absolute top-1/4 -left-20 w-64 h-64 sm:w-96 sm:h-96 bg-blue-500/5 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.1, 1],
           opacity: [0.05, 0.1, 0.05],
@@ -471,7 +477,7 @@ export default function VisionMission() {
         }}
       />
       <motion.div
-        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"
+        className="absolute bottom-1/4 -right-20 w-64 h-64 sm:w-96 sm:h-96 bg-green-500/5 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.1, 1],
           opacity: [0.05, 0.1, 0.05],
@@ -484,9 +490,9 @@ export default function VisionMission() {
         }}
       />
 
-      {/* Subtle floating labels */}
+      {/* Subtle floating labels - hidden on mobile */}
       <motion.div
-        className="absolute top-10 left-5 text-xs text-gray-500/50 font-mono tracking-wider"
+        className="absolute top-10 left-5 text-xs text-gray-500/50 font-mono tracking-wider hidden sm:block"
         animate={{
           y: [0, -5, 0],
         }}
@@ -499,7 +505,7 @@ export default function VisionMission() {
         MEP SYSTEMS
       </motion.div>
       <motion.div
-        className="absolute bottom-10 right-5 text-xs text-gray-500/50 font-mono tracking-wider"
+        className="absolute bottom-10 right-5 text-xs text-gray-500/50 font-mono tracking-wider hidden sm:block"
         animate={{
           y: [0, 5, 0],
         }}
