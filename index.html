@@ -2,10 +2,219 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Futuristic Corporate Technical Website</title>
-   
+    
+    <!-- Favicon - Using logo.PNG as temporary favicon -->
+    <link rel="icon" type="image/png" href="/logo.PNG" />
+    <link rel="apple-touch-icon" href="/logo.PNG" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- TODO: Replace with proper favicon files later -->
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /> -->
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> -->
+    
+    <!-- Viewport & Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#3b82f6" />
+    
+    <!-- Primary Meta Tags -->
+    <title>4Plus Technical Services | MEP Engineering Excellence in UAE</title>
+    <meta name="title" content="4Plus Technical Services | MEP Engineering Excellence in UAE" />
+    <meta name="description" content="Leading MEP technical services provider in UAE delivering innovative, sustainable, and future-ready electrical, mechanical, and plumbing solutions. Expert engineering for commercial and residential projects." />
+    <meta name="keywords" content="MEP services UAE, mechanical engineering UAE, electrical services UAE, plumbing services UAE, HVAC installation, building services, technical services UAE, 4Plus Technical Services" />
+    <meta name="author" content="4Plus Technical Services" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.4plustechnicalservices.com/" />
+    <meta property="og:title" content="4Plus Technical Services | MEP Engineering Excellence in UAE" />
+    <meta property="og:description" content="Leading MEP technical services provider in UAE delivering innovative, sustainable, and future-ready electrical, mechanical, and plumbing solutions." />
+    <meta property="og:image" content="https://www.4plustechnicalservices.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="4Plus Technical Services" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.4plustechnicalservices.com/" />
+    <meta name="twitter:title" content="4Plus Technical Services | MEP Engineering Excellence in UAE" />
+    <meta name="twitter:description" content="Leading MEP technical services provider in UAE delivering innovative, sustainable, and future-ready electrical, mechanical, and plumbing solutions." />
+    <meta name="twitter:image" content="https://www.4plustechnicalservices.com/twitter-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.4plustechnicalservices.com/" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "4Plus Technical Services",
+      "alternateName": "4Plus Tech",
+      "url": "https://www.4plustechnicalservices.com",
+      "logo": "https://www.4plustechnicalservices.com/logo.PNG",
+      "description": "Leading MEP technical services provider in UAE delivering innovative, sustainable, and future-ready electrical, mechanical, and plumbing solutions.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office No. 44-43, owned by Dubai Municipality",
+        "addressLocality": "Bur Dubai - Al Fahidi",
+        "addressRegion": "Dubai",
+        "postalCode": "",
+        "addressCountry": "AE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+971-55-208-3155",
+        "contactType": "customer service",
+        "areaServed": "AE",
+        "availableLanguage": ["en", "ar"]
+      },
+      "sameAs": []
+    }
+    </script>
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "4Plus Technical Services",
+      "image": "https://www.4plustechnicalservices.com/logo.PNG",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office No. 44-43, owned by Dubai Municipality",
+        "addressLocality": "Bur Dubai - Al Fahidi",
+        "addressRegion": "Dubai",
+        "postalCode": "",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.2642,
+        "longitude": 55.2975
+      },
+      "url": "https://www.4plustechnicalservices.com",
+      "telephone": "+971-55-208-3155",
+      "email": "info@4plustechnicalservices.com",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "14:00"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "MEP Engineering Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "4Plus Technical Services",
+        "url": "https://www.4plustechnicalservices.com"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "MEP Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Electrical & ELV Systems",
+              "description": "Complete electrical and extra-low voltage systems installation, maintenance, and design services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "HVAC Systems",
+              "description": "Heating, ventilation, and air conditioning systems installation and maintenance"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plumbing Works",
+              "description": "Plumbing installation, drainage systems, and water supply solutions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Design & Approvals",
+              "description": "MEP design services and regulatory approvals"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4plustechnicalservices.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://www.4plustechnicalservices.com#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Services",
+          "item": "https://www.4plustechnicalservices.com#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://www.4plustechnicalservices.com#contact"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
