@@ -107,7 +107,7 @@ export default function Footer() {
                   {/* Logo */}
                   <div className="mb-4">
                     <img 
-                      src="/logo.PNG" 
+                      src="/logo.png" 
                       alt="4Plus Technical Services" 
                       className="h-16 w-auto object-contain"
                     />
@@ -243,4 +243,5 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-500/5 via-green-500/5 to-transparent pointer-events-none" />
     </footer>
   );
+
 }
