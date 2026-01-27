@@ -81,7 +81,7 @@ export default function Header() {
                 </h1>
               </div>
               <div className="block sm:hidden">
-                <h1 className="text-xs font-bold text-gray-900 leading-tight">
+                <h1 className="text-xl font-bold text-gray-900 leading-tight">
                   4PLUS TECHNICAL SERVICES
                 </h1>
               </div>
