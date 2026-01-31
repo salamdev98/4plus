@@ -7,8 +7,8 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const stats = [
-    { icon: Building2, label: "Projects", value: "500+" },
-    { icon: Users, label: "Clients", value: "200+" },
+    { icon: Building2, label: "Projects", value: "50+" },
+    { icon: Users, label: "Clients", value: "50+" },
     { icon: Award, label: "Excellence", value: "100%" },
     { icon: TrendingUp, label: "Growth", value: "50%+" }
   ];
