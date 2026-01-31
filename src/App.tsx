@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import FloatingActions from './components/FloatingActions';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ClientsProjects from './components/Clients';
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
       <About />
       <VisionMission />
       <Services />
+      <ClientsProjects />
       <Contact />
       <Footer />
       <FloatingActions />
