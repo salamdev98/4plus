@@ -9,58 +9,48 @@ export default function ClientsProjects() {
 
   // Client logos with actual company placeholder images
   const clients = [
-    { name: 'Emaar', logo: 'https://logo.clearbit.com/emaar.com' },
-    { name: 'Dubai Properties', logo: 'https://logo.clearbit.com/dubaiproperties.ae' },
-    { name: 'Nakheel', logo: 'https://logo.clearbit.com/nakheel.com' },
-    { name: 'Damac', logo: 'https://logo.clearbit.com/damacproperties.com' },
-    { name: 'Aldar', logo: 'https://logo.clearbit.com/aldar.com' },
-    { name: 'Meraas', logo: 'https://logo.clearbit.com/meraas.ae' },
-    { name: 'Dubai Holding', logo: 'https://logo.clearbit.com/dubaiholding.com' },
-    { name: 'Majid Al Futtaim', logo: 'https://logo.clearbit.com/majidalfuttaim.com' },
+    { name: 'albaik', logo: './albaik.webp' },
+    { name: 'bombay', logo: './bombay.webp' },
+    { name: 'burgerking', logo: './burgerking.webp' },
+    { name: 'dominos', logo: './dominos.webp' },
+    { name: 'lekki', logo: './lekki.jpg' },
+    { name: 'unistar', logo: './unistar.png' },
+
   ];
 
   // Real project images from Unsplash
   const projects = [
     { 
       id: 1, 
-      title: 'Burj Khalifa District MEP Systems', 
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80' 
+      title: 'Acasia Cosmetics Bin Sougat Centre - G 45 –Dubai, UAE', 
+      image: './gallery1.jpeg' 
     },
     { 
       id: 2, 
-      title: 'Dubai Marina Residential Complex', 
-      image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80' 
+      title: 'LEKKI ON DECK REST. At Palm Jumeirah -Dubai', 
+      image: './gallery2.jpeg' 
     },
     { 
       id: 3, 
-      title: 'Downtown Dubai Commercial Tower', 
-      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80' 
+      title: 'Domino’s Pizza. At Dubai South –Dubai', 
+      image: './gallery3.jpeg' 
     },
     { 
       id: 4, 
-      title: 'Palm Jumeirah Luxury Villa HVAC', 
-      image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1920&q=80' 
+      title: 'Burger King. At Enoc-Dubai South, Dubai', 
+      image: './gallery4.jpg' 
     },
     { 
       id: 5, 
-      title: 'Business Bay Office Tower Electrical', 
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80' 
+      title: 'Bombay Chowpatty at Emirates Mall –Dubai', 
+      image: './gallery5.jpeg' 
     },
     { 
       id: 6, 
-      title: 'Dubai Creek Harbour Development', 
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80' 
+      title: 'Al Baik at Deerfield’s Mall – Abu-Dhabi', 
+      image: './gallery6.png' 
     },
-    { 
-      id: 7, 
-      title: 'JBR Beach Residence Plumbing Works', 
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80' 
-    },
-    { 
-      id: 8, 
-      title: 'Emirates Hills Villa MEP Installation', 
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80' 
-    },
+
   ];
 
   // Auto-advance slideshow
@@ -142,7 +132,7 @@ export default function ClientsProjects() {
             {/* Scrolling Container */}
             <div className="overflow-x-hidden max-w-full">
               <motion.div
-                className="flex gap-4 sm:gap-6 lg:gap-8"
+                className="flex gap-4 sm:gap-6 lg:gap-16"
                 style={{ maxWidth: 'none' }}
                 animate={{
                   x: ['0%', '-50%'],
@@ -162,7 +152,7 @@ export default function ClientsProjects() {
                     className="flex-shrink-0 w-32 sm:w-40 lg:w-48"
                     style={{ maxWidth: 'none' }}
                   >
-                    <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 h-16 sm:h-20 lg:h-24 flex items-center justify-center group">
+                    <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl    transition-all duration-300  hover:border-blue-200 h-16 sm:h-20 lg:h-24 flex items-center justify-center group">
                       <img 
                         src={client.logo} 
                         alt={client.name}
