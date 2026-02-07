@@ -13,7 +13,6 @@ const ComingSoon: React.FC = () => {
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Coming Soon 🚀
         </h1>
-        <h1 className="text-red-500 text-6xl">COMING SOON TEST</h1>
 
 
         <p className="text-gray-400 text-lg mb-6">
@@ -29,4 +28,5 @@ const ComingSoon: React.FC = () => {
 };
 
 export default ComingSoon;
+
 
