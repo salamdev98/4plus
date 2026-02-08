@@ -8,7 +8,7 @@ import FloatingActions from './components/FloatingActions';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ClientsProjects from './components/Clients';
-import ComingSoon from './components/ComingSoon';
+// import ComingSoon from './components/ComingSoon';
 
 function App() {
   useEffect(() => {
@@ -18,9 +18,8 @@ function App() {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
-            <ComingSoon />
 
-      {/* <Header/>
+      <Header/>
       <Hero />
       <About />
       <VisionMission />
@@ -28,7 +27,7 @@ function App() {
       <ClientsProjects />
       <Contact />
       <Footer />
-      <FloatingActions /> */}
+      <FloatingActions /> 
     </main>
   );
 }
